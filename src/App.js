@@ -4,6 +4,9 @@ import { ThemeProvider, styled } from "styled-components";
 import * as theme from "./styled/theme";
 import ProductCard from "./components/ProductCard";
 import { useSelector } from "react-redux";
+import CartItem from "./components/CartItem";
+import ListMenu from "./components/ListMenu";
+import CalculateBox from "./components/CalculateBox";
 
 // const theme = {
 // 	primary: "red",
@@ -68,13 +71,18 @@ function App() {
 		<ThemeProvider theme={theme}>
 			<Header />
 			<Container>
-				<MenuContainer>Menu</MenuContainer>
+				<MenuContainer>
+					<ListMenu />
+				</MenuContainer>
 				<ProductContainer>
 					{products.map(item => (
 						<ProductCard key={item.id} item={item} />
 					))}
 				</ProductContainer>
-				<CartContainer>Cart</CartContainer>
+				<CartContainer>
+					<CartItem />
+					<CalculateBox />
+				</CartContainer>
 			</Container>
 		</ThemeProvider>
 	);

@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Card = styled.div`
 	width: 17%;
 	height: 12rem;
+padding:10px;
 	cursor: pointer;
 `;
 const CardImg = styled.img`
